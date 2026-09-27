@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Task Planner</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container py-4">
+
+        <!-- Header -->
+        <header class="text-center mb-4">
+            <div class="planner-icon">
+                ✓
+            </div>
+
+            <h1 class="fw-bold">Daily Task Planner</h1>
+
+            <p class="text-muted mb-1">
+                Organize your day, one task at a time.
+            </p>
+
+            <div id="currentDate" class="date-text"></div>
+        </header>
+
+
+        <!-- Add Task Section -->
+        <section class="task-card p-4 mb-4">
+
+            <h5 class="fw-bold mb-3">Add a New Task</h5>
+
+            <div class="input-group">
+                <input
+                    type="text"
+                    id="taskInput"
+                    class="form-control"
+                    placeholder="Enter your task..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="addTaskBtn"
+                    class="btn btn-primary"
+                    type="button"
+                >
+                    Add Task
+                </button>
+            </div>
+
+            <small id="errorMessage" class="text-danger d-none">
+                Please enter a task.
+            </small>
+
+        </section>
+
+
+        <!-- Filter Section -->
+        <section class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+
+            <h5 class="fw-bold mb-0">My Tasks</h5>
+
+            <div class="btn-group" role="group" aria-label="Task filters">
+
+                <button
+                    class="btn btn-outline-primary filter-btn active"
+                    data-filter="all"
+                >
+                    All
+                </button>
+
+                <button
+                    class="btn btn-outline-primary filter-btn"
+                    data-filter="pending"
+                >
+                    Pending
+                </button>
+
+                <button
+                    class="btn btn-outline-primary filter-btn"
+                    data-filter="completed"
+                >
+                    Completed
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task List -->
+        <section class="task-card">
+
+            <div id="taskList" class="task-list">
+                <!-- Tasks will be inserted using JavaScript -->
+            </div>
+
+            <div id="emptyMessage" class="empty-message">
+                <div class="empty-icon">📝</div>
+                <h6>No tasks found</h6>
+                <p class="text-muted mb-0">
+                    Add a task to get started.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="text-center mt-4">
+            <p class="text-muted small">
+                Daily Task Planner &copy; <span id="currentYear"></span>
+            </p>
+        </footer>
+
+    </div>
+
+
+    <!-- Bootstrap 5 JavaScript Bundle CDN -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
